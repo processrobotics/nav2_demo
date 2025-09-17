@@ -105,13 +105,19 @@
 	<!-- ========================
 		   Vehicle(s) definition
 	     ======================== -->
-	<for var="iX" from="0" to="1">
-		<for var="iY" from="0" to="2">
-			<vehicle class="jackal">
-				<init_pose>$f{12*iX-6} $f{12*iY-12} 0</init_pose>  <!-- In global coords: x,y, yaw(deg) -->
-			</vehicle>
-		</for>
-	</for>
+	<!-- <for var="iX" from="0" to="1"> -->
+		<!-- <for var="iY" from="0" to="2"> -->
+			<!-- <vehicle class="jackal"> -->
+				 <!-- In global coords: x,y, yaw(deg) -->
+				<!-- <init_pose>$f{12*iX-6} $f{12*iY-12} 0</init_pose>  -->
+			<!-- </vehicle> -->
+		<!-- </for> -->
+	<!-- </for> -->
+
+	<vehicle class="jackal">
+			<!-- In global coords: x,y, yaw(deg) -->
+		<init_pose>15 0 0</init_pose>
+	</vehicle>
 
 	<!-- ======================================
 	      Object types
@@ -202,6 +208,18 @@
 		</visual>
 	</block:class>
 
+	<block:class name="muh">
+		<static>true</static> <!-- Does not move -->
+		<mass>2</mass> <ground_friction>1</ground_friction>
+		<shape_from_visual/> <!-- automatic shape,zmin,zmax from 3D mesh-->
+		<!--  Custom visualization model. 3D model filename to load (local or remote http://uri ) -->
+		<!-- <scale></scale> -->
+		<visual>
+			<model_uri>https://mrpt.github.io/mvsim-models/person_standing.zip/person_standing/person_standing.dae</model_uri>
+			<model_roll>90.0</model_roll>
+		</visual>
+	</block:class>
+
 	<!-- ======================================
 	      Object instances
 	     ====================================== -->
@@ -213,6 +231,10 @@
 	-->
 
 	<block class="muh_haas_machine"> <init_pose>0 0 0</init_pose> </block>
+	<block class="muh_haas_machine"> <init_pose>5 0 0</init_pose> </block>
+	<block class="muh_haas_machine"> <init_pose>10 0 0</init_pose> </block>
+
+	<!-- <block class="muh"> <init_pose>0 -2 0</init_pose> </block> -->
 
 	<!-- <block class="shelf"> <init_pose>0 5 0</init_pose> </block> -->
 	<!-- <block class="shelf"> <init_pose>0 9 180</init_pose> </block> -->
