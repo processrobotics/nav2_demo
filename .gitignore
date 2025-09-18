@@ -1,2 +1,76 @@
-.vscode/c_cpp_properties.json
-.vscode/settings.json
+############################################################
+# VS Code
+############################################################
+.vscode/*
+!.vscode/extensions.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/settings.sample.json
+
+############################################################
+# ROS 2 / colcon build artifacts
+############################################################
+build/
+install/
+log/
+
+############################################################
+# CMake
+############################################################
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+############################################################
+# Python
+############################################################
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+*.eggs/
+
+############################################################
+# Logs & temp
+############################################################
+*.log
+*.tmp
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+############################################################
+# Colcon/ament metadata (if created at repo root)
+############################################################
+colcon.*
+AMENT_PREFIX_PATH
+AMENT_* 
+
+############################################################
+# Coverage / reports
+############################################################
+coverage/
+.coverage*
+htmlcov/
+
+############################################################
+# Docker & container
+############################################################
+.docker/
+*.env
+.env*
+
+############################################################
+# Keep asset folders tracked
+# (maps/, launch/, models/, params/, rviz/, definitions/) are source assets
+# so do not ignore them.
+############################################################
